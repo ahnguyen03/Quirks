@@ -32,6 +32,7 @@ public class InventoryTest {
     Drop drop = new drop("drop", "this is drop", "Rare");
     Inventory myInventory = new Inventory();
     myInventory.addQuirk(Quirk);
+    
     assertTrue(myInventory.hasDrop(drop));
   }
 
@@ -49,7 +50,6 @@ public class InventoryTest {
     Drop drop = new drop("drop", "this is drop", "Rare");
     Inventory myInventory = new Inventory();
     myInventory.addQuirk(drop);
-    ArrayList<Drop> dropList = new ArrayList<Drop>();
     myInventory.removeDrop(drop);
     assertFalse(myInventory.getList().contains(drop));
   }
