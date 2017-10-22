@@ -53,3 +53,4 @@ public class InventoryTest {
     myInventory.removeDrop(drop);
     assertFalse(myInventory.getList().contains(drop));
   }
+}
