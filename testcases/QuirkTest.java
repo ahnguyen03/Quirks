@@ -64,22 +64,15 @@ public class QuirkTest {
     assertFalse(Arrays.asList(occurences).contains(Tuesday));
   }
 
-  // Test editing a quirk
-  public void testEditTitleQuirk() {
+  // Test goal
+  public void testGetGoalQuirk() {
     Quirk myQuirk = new Quirk("some_type", "some_title", 123);
-    myQuirk.editAttribute("title", "some_new_value");
-    assertEquals(myQuirk.getTitle(), "some_new_value");
+    assertEquals(myQuirk.getGoal(), 123);
   }
 
-  public void testEditTypeQuirk() {
+  public void testSetGoalQuirk() {
     Quirk myQuirk = new Quirk("some_type", "some_title", 123);
-    myQuirk.editAttribute("type", "some_new_type");
-    assertEquals(myQuirk.getType(), "some_new_type");
-  }
-
-  public void testEditGoalQuirk() {
-    Quirk myQuirk = new Quirk("some_type", "some_title", 123);
-    myQuirk.editAttribute("goal", 170);
+    myQuirk.setGoal(170);
     assertEquals(myQuirk.getGoal(), 170);
   }
 
@@ -93,16 +86,7 @@ public class QuirkTest {
     assertTrue(events.hasEvent(event));
   }
 
-  public void testDeleteEvent() {
-    Quirk myQuirk = new Quirk("some_type", "some_title", 123);
-    ArrayList<Event> events = myQuirk.getEvents();
-    Event event = new Event("some event");
-    events.addEvent(event);
-    events.delete(event);
-    assertFalse(events.hasevent(event));
-  }
-
-  public void testGetevent() {
+  public void testGetEvents() {
     Quirk myQuirk = newQuirk("some_type", "some_title", 123);
     ArrayList<Event> events = myQuirk.getEvents();
     event event = new Event("test");
@@ -115,6 +99,7 @@ public class QuirkTest {
   // Test progressing quirk
   public void testGetProgress() {
     Quirk myQuirk = new Quirk("some_type", "some_title", 123);
+    // Should have no progress new quirk, 123 is goal
     assertEquals(myQuirk.getProgress(), 0);
   }
 
@@ -136,5 +121,45 @@ public class QuirkTest {
     int previous = myQuirk.getProgress();
     myQuirk.subtractProgress();
     assertEquals(myQuirk.getProgress(), previous - 1);
+  }
+
+  // Test title
+  public void testGetTitle() {
+    Quirk myQuirk = new Quirk("some_type", "some_title", 123);
+    assertEquals("some_title", myQuirk.getTitle());
+  }
+
+  public void testSetTitle() {
+    Quirk myQuirk = new Quirk("some_type", "some_title", 123);
+    myQuirk.setTitle("new title");
+    assertEquals("new title", myQuirk.getTitle());
+  }
+
+  // Test type
+  public void testGetType() {
+    Quirk myQuirk = new Quirk("some_type", "some_title", 123);
+    assertEquals("some_type", myQuirk.getType());
+  }
+
+  public void testSetTitle() {
+    Quirk myQuirk = new Quirk("some_type", "some_title", 123);
+    myQuirk.setTitle("new type");
+    assertEquals("new type", myQuirk.getTitle());
+  }
+
+  // Test start date
+  public void testGetDate() {
+    Date now = new Date();
+    Quirk myQuirk = new Quirk("some_type", "some_title", 123, now);
+    assertEquals(now, getDate());
+  }
+
+  public void testSetDate() {
+    Date now = new Date();
+    Quirk myQuirk = new Quirk("some_type", "some_title", 123, now);
+    // Some date here
+    Date newDate = new Date("YYYY-mm-dd");
+    myQuirk.setDate(newDate);
+    assertEquals(newDate, getDate());
   }
 }
