@@ -3,18 +3,14 @@ public class EventList {
 
   // Test getEventList
   public void testGetList() {
-    Drop drop = new drop("drop", "this is drop", "Rare");
-    Drop drop1 = new drop("drop1", "this is drop1", "Common");
+    Event event = new Event("ate lettuce");
+    EventList myEventList = new EventList();
+    myEventList.addEvent(event);
 
-    Inventory myInventory = new Inventory();
-    myInventory.addQuirk(drop);
-    myInventory.addQuirk(drop);
+    ArrayList<Event> eventList = new ArrayList<eventList>();
+    eventList.add(event);
 
-    ArrayList<Drop> dropList = new ArrayList<Drop>();
-    dropList.add(drop);
-    dropList.add(drop1);
-
-    assertEquals(myInventory, dropList);
+    assertEquals(myEventList, eventList);
   }
 
   // Test adding Event to EventList
@@ -45,7 +41,7 @@ public class EventList {
 
   // Test to deleting Event from Eventlist
   public void testDeleteEvent() {
-    DEvent event = new Event("ate lettuce");
+    Event event = new Event("ate lettuce");
     EventList myEventList = new EventList();
     myEventList.addEvent(event);
     myEventList.deleteEvent(event);
