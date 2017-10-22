@@ -1,5 +1,20 @@
 public class EventTest {
 
+  //Test Quirk
+
+  public void testGetQuirk() {
+    Quirk myQuirk = new Quirk("some_type", "some_title", 123);
+    Event event = new Event("ate lettuce",myQuirk);
+    assertEquals(event.getQuirk(), myQuirk);
+  }
+
+  public void testSetQuirk() {
+    Quirk myQuirk = new Quirk("some_type", "some_title", 123);
+    Event event = new Event("ate lettuce",myQuirk);
+    Quirk newQuirk = new Quirk("awesome_type", "awesome_title", 122)
+    event.setQuirk(newQuirk);
+    assertEquals(event.getQuirk(), newQuirk);
+  }
   // Test comment
   public void testGetComment() {
     Event event = new Event("ate lettuce");
