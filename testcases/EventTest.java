@@ -54,6 +54,31 @@ public class EventTest {
     assertEquals(null, returnedGeolocation);
   }
 
-  // Some tests for removing and adding photos?
-  // Not really sure how we should do this yet.
+  // Some tests for removing and adding photos
+  public void testgetPhotoURI() {
+    Uri someuri = new Uri("SOME PHOTO URI HERE");
+    Event event = new Event("ate lettuce", someuri);
+    assertEquals(event.getPhotoUri(), someuri);
+  }
+
+  public void testsetPhotoURI() {
+    Event event = new Event("ate lettuce");
+    Uri someuri = new Uri("SOME PHOTO URI HERE");
+    event.setPhotoUri(someuri);
+    assertEquals(event.getPhotoUri(), someuri);
+  }
+
+  public void testGetDate() {
+    Date date = new Date();
+    Event event = new Event("ate lettuce", date);
+    assertEquals(event.getDate(), date);
+  }
+
+  public void testSetDate() {
+    Event event = new Event("ate lettuce");
+    Date date = new Date();
+    event.setDate(date);
+    assertEquals(event.getDate(), date);
+  }
+
 }
