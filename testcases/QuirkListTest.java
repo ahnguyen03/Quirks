@@ -47,7 +47,7 @@ public class QuirkListTest {
     QuirkList myQuirkList = new Inventory();
     myQuirkList.addQuirk(myQuirk);
     myQuirkList.removeQuirk(myQuirk);
-    asserTrue(myQuirkList.getList().contains(myQuirk));
+    assertFalse(myQuirkList.getList().contains(myQuirk));
   }
 
 }
