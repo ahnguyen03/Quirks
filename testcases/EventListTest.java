@@ -1,4 +1,3 @@
-xr
 
 public class EventList {
 
