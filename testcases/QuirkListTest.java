@@ -19,7 +19,7 @@ public class QuirkListTest {
   
   // Test adding Quirk to QuirkList
   public void testAddQuirk() {
-  	Quirk myQuirk = new Quirk("some_type", "some_title", 123);
+    Quirk myQuirk = new Quirk("some_type", "some_title", 123);
     QuirkList myQuirkList = new Inventory();
     myQuirkList.addQuirk(myQuirk);
     assertEquals(myQuirkList.getList().contains(myQuirk));
@@ -43,7 +43,7 @@ public class QuirkListTest {
 
   // Test to remove Quirk from QuirkList
   public void testDeleteQuirk() {
-  	Quirk myQuirk = new Quirk("some_type", "some_title", 123);
+    Quirk myQuirk = new Quirk("some_type", "some_title", 123);
     QuirkList myQuirkList = new Inventory();
     myQuirkList.addQuirk(myQuirk);
     myQuirkList.removeQuirk(myQuirk);
