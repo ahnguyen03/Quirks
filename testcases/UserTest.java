@@ -1,5 +1,18 @@
 public class UserTest {
 
+  public testGetUsername(){
+    User friend1 = new User("alex");
+    String username = "alex";
+    assertEquals(friend1.getUsername(), username);
+  }
+
+  public testSetUsername(){
+    User user1 = new User("alex");
+    user1.setUsername("jordan")
+
+    assertEquals(user1.getUsername(), "jordan");
+  }
+
   public testGetFriendsList() {
     User friend1 = new User("alex");
     User friend2 = new User("jordan");
