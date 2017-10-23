@@ -1,6 +1,9 @@
 package cmput301f17t12.quirks;
 
 import org.junit.Test;
+
+import java.util.ArrayList;
+
 import static org.junit.Assert.*;
 
 public class InventoryTest {
@@ -8,16 +11,16 @@ public class InventoryTest {
     // Test to getInventory
     @Test
     public void testGetList() {
-        Drop drop = new Drop("drop", "this is drop", "Rare");
-        Drop drop1 = new Drop("drop1", "this is drop1", "Common");
+        Drop drop1 = new Drop(Rarity.COMMON, "drop_name1");
+        Drop drop2 = new Drop(Rarity.RARE, "drop_name2");
 
         Inventory myInventory = new Inventory();
-        myInventory.addQuirk(drop);
-        myInventory.addQuirk(drop);
+        myInventory.addDrop(drop1);
+        myInventory.addDrop(drop2);
 
         ArrayList<Drop> dropList = new ArrayList<Drop>();
-        dropList.add(drop);
         dropList.add(drop1);
+        dropList.add(drop2);
 
         assertEquals(myInventory.getList(), dropList);
     }
@@ -25,19 +28,21 @@ public class InventoryTest {
     // Test adding Drop to inventory
     @Test
     public void testAddDrop() {
-        Drop drop = new drop("drop", "this is drop", "Rare");
-        Inventory myInventory = new Inventory();
-        myInventory.addQuirk(drop);
+        Drop drop = new Drop(Rarity.COMMON, "drop_name");
 
-        asserTrue(myInventory.getList().contains(drop));
+        Inventory myInventory = new Inventory();
+
+        assertFalse(myInventory.hasDrop(drop));
+        myInventory.addDrop(drop);
+        assertTrue(myInventory.hasDrop(drop));
     }
 
     // Test if Drop exists in Inventory
     @Test
     public void testHasDrop() {
-        Drop drop = new drop("drop", "this is drop", "Rare");
+        Drop drop = new Drop(Rarity.COMMON, "drop_name");
         Inventory myInventory = new Inventory();
-        myInventory.addQuirk(Quirk);
+        myInventory.addDrop(drop);
 
         assertTrue(myInventory.hasDrop(drop));
     }
@@ -45,9 +50,9 @@ public class InventoryTest {
     // Test to return the Drop at location from Inventory
     @Test
     public void testGetDrop() {
-        Drop drop = new drop("drop", "this is drop", "Rare");
+        Drop drop = new Drop(Rarity.COMMON, "drop_name");
         Inventory myInventory = new Inventory();
-        myInventory.addQuirk(Quirk);
+        myInventory.addDrop(drop);
 
         assertEquals(myInventory.getDrop(0), drop);
     }
@@ -55,11 +60,14 @@ public class InventoryTest {
     // Test to remove Drop from Inventory
     @Test
     public void testRemoveDrop() {
-        Drop drop = new drop("drop", "this is drop", "Rare");
+        Drop drop = new Drop(Rarity.COMMON, "drop_name");
         Inventory myInventory = new Inventory();
-        myInventory.addQuirk(drop);
+        myInventory.addDrop(drop);
+        assertTrue(myInventory.hasDrop(drop));
         myInventory.removeDrop(drop);
-        assertFalse(myInventory.getList().contains(drop));
+        assertFalse(myInventory.hasDrop(drop));
     }
+
+
 }
 

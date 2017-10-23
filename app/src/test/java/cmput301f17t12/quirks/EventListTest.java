@@ -2,6 +2,10 @@ package cmput301f17t12.quirks;
 
 
 import org.junit.Test;
+
+import java.util.ArrayList;
+import java.util.Date;
+
 import static org.junit.Assert.*;
 
 public class EventListTest {
@@ -9,52 +13,76 @@ public class EventListTest {
     // Test getEventList
     @Test
     public void testGetList() {
-        Event event = new Event("ate lettuce");
-        EventList myEventList = new EventList();
-        myEventList.addEvent(event);
+        Quirk quirk = new Quirk (new EventList(), "title", "type", "reason",
+                new Date(), new ArrayList<Day>(), 1f, 2f);
+        Event event = new Event(quirk, "comment", null, new Date(), new Geolocation(1,1));
 
-        ArrayList<Event> eventList = new ArrayList<eventList>();
-        eventList.add(event);
+        EventList events1 = new EventList();
 
-        assertEquals(myEventList, eventList);
+        events1.addEvent(event);
+
+        ArrayList<Event> events2 = new ArrayList<Event>();
+        events2.add(event);
+
+        assertEquals(events1, events2);
     }
 
     // Test adding Event to EventList
     @Test
     public void testAddEvent() {
-        Event event = new Event("ate lettuce");
-        EventList myEventList = new EventList();
-        myEventList.addEvent(event);
-        assertTrue(myEventList.getList().contains(event));
+        Quirk quirk = new Quirk (new EventList(), "title", "type", "reason",
+                new Date(), new ArrayList<Day>(), 1f, 2f);
+        Event event = new Event(quirk, "comment", null, new Date(), new Geolocation(1,1));
+
+        EventList events = new EventList();
+
+        assertFalse(events.hasEvent(event));
+        events.addEvent(event);
+        assertTrue(events.hasEvent(event));
 
     }
 
     // Test EventList has Event
     @Test
     public void testHasEvent() {
-        Event event = new Event("ate lettuce");
-        EventList myEventList = new EventList();
-        myEventList.addEvent(event);
-        assertTrue(myEventList.hasEvent(event));
+        Quirk quirk = new Quirk (new EventList(), "title", "type", "reason",
+                new Date(), new ArrayList<Day>(), 1f, 2f);
+        Event event = new Event(quirk, "comment", null, new Date(), new Geolocation(1,1));
+
+        EventList events = new EventList();
+
+        assertEquals(events.hasEvent(event), events.getList().contains(event));
+        events.addEvent(event);
+        assertEquals(events.hasEvent(event), events.getList().contains(event));
     }
 
     // Test getting Event from EventList
     @Test
     public void testGetEvent() {
-        Event event = new Event("ate lettuce");
-        EventList myEventList = new EventList();
-        myEventList.addEvent(event);
-        assertEquals(myEventList.getEvent(0), event);
+        Quirk quirk = new Quirk (new EventList(), "title", "type", "reason",
+                new Date(), new ArrayList<Day>(), 1f, 2f);
+        Event event = new Event(quirk, "comment", null, new Date(), new Geolocation(1,1));
+
+        EventList events = new EventList();
+
+        events.addEvent(event);
+
+        assertEquals(events.getEvent(0), event);
     }
 
     // Test to deleting Event from Eventlist
     @Test
     public void testDeleteEvent() {
-        Event event = new Event("ate lettuce");
-        EventList myEventList = new EventList();
-        myEventList.addEvent(event);
-        myEventList.deleteEvent(event);
-        assertFalse(myEventList.getList().contains(event));
+        Quirk quirk = new Quirk (new EventList(), "title", "type", "reason",
+                new Date(), new ArrayList<Day>(), 1f, 2f);
+        Event event = new Event(quirk, "comment", null, new Date(), new Geolocation(1,1));
+
+        EventList events = new EventList();
+
+        events.addEvent(event);
+        assertTrue(events.hasEvent(event));
+        events.removeEvent(event);
+        assertFalse(events.hasEvent(event));
     }
 
 }
