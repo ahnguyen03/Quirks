@@ -1,4 +1,4 @@
-package cmput301f17t12.quirks;
+package cmput301f17t12.quirks.Models;
 
 import java.util.ArrayList;
 

@@ -4,6 +4,15 @@ import org.junit.Test;
 import java.util.ArrayList;
 import java.util.Date;
 
+import cmput301f17t12.quirks.Enumerations.Day;
+import cmput301f17t12.quirks.Enumerations.Rarity;
+import cmput301f17t12.quirks.Models.Drop;
+import cmput301f17t12.quirks.Models.EventList;
+import cmput301f17t12.quirks.Models.Inventory;
+import cmput301f17t12.quirks.Models.Quirk;
+import cmput301f17t12.quirks.Models.QuirkList;
+import cmput301f17t12.quirks.Models.User;
+
 import static org.junit.Assert.*;
 
 public class UserTest {

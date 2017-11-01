@@ -1,8 +1,9 @@
-package cmput301f17t12.quirks;
+package cmput301f17t12.quirks.Models;
 
-import java.lang.reflect.Array;
 import java.util.ArrayList;
 import java.util.Date;
+
+import cmput301f17t12.quirks.Enumerations.Day;
 
 /**
  * Created by thomas on 2017-10-21.

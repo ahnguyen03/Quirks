@@ -1,15 +1,16 @@
-package cmput301f17t12.quirks;
+package cmput301f17t12.quirks.Models;
 
 import android.net.Uri;
 
 import java.util.Date;
-import java.util.jar.Pack200;
+
+import cmput301f17t12.quirks.Interfaces.Mappable;
 
 /**
  * Created by thomas on 2017-10-21.
  */
 
-public class Event implements Mappable{
+public class Event implements Mappable {
 
     private Quirk quirk;
     private String comment;

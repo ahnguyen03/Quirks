@@ -1,6 +1,5 @@
-package cmput301f17t12.quirks;
+package cmput301f17t12.quirks.Models;
 
-import java.lang.reflect.Array;
 import java.util.ArrayList;
 
 /**

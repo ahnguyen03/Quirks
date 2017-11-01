@@ -4,6 +4,6 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="cmput301f17t12.quirks.EventsActivity">
+    tools:context="cmput301f17t12.quirks.Activities.EventsActivity">
 
 </android.support.constraint.ConstraintLayout>

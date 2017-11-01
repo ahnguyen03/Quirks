@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="cmput301f17t12.quirks.MainActivity">
+    tools:context="cmput301f17t12.quirks.Activities.MainActivity">
 
     <LinearLayout
         android:layout_width="fill_parent"

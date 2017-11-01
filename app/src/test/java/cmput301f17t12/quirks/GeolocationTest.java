@@ -1,6 +1,9 @@
 package cmput301f17t12.quirks;
 
 import org.junit.Test;
+
+import cmput301f17t12.quirks.Models.Geolocation;
+
 import static org.junit.Assert.*;
 
 public class GeolocationTest {
