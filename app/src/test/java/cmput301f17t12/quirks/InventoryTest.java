@@ -4,6 +4,10 @@ import org.junit.Test;
 
 import java.util.ArrayList;
 
+import cmput301f17t12.quirks.Enumerations.Rarity;
+import cmput301f17t12.quirks.Models.Drop;
+import cmput301f17t12.quirks.Models.Inventory;
+
 import static org.junit.Assert.*;
 
 public class InventoryTest {

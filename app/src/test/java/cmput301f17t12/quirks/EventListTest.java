@@ -6,6 +6,12 @@ import org.junit.Test;
 import java.util.ArrayList;
 import java.util.Date;
 
+import cmput301f17t12.quirks.Enumerations.Day;
+import cmput301f17t12.quirks.Models.Event;
+import cmput301f17t12.quirks.Models.EventList;
+import cmput301f17t12.quirks.Models.Geolocation;
+import cmput301f17t12.quirks.Models.Quirk;
+
 import static org.junit.Assert.*;
 
 public class EventListTest {

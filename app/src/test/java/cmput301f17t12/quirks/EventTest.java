@@ -7,6 +7,12 @@ import static org.junit.Assert.*;
 import java.util.ArrayList;
 import java.util.Date;
 
+import cmput301f17t12.quirks.Enumerations.Day;
+import cmput301f17t12.quirks.Models.Event;
+import cmput301f17t12.quirks.Models.EventList;
+import cmput301f17t12.quirks.Models.Geolocation;
+import cmput301f17t12.quirks.Models.Quirk;
+
 public class EventTest {
     private float currFloat = 5.6f;
     private float goalFloat = 13.1f;
