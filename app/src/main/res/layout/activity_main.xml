@@ -11,8 +11,18 @@
         android:orientation="vertical"
         android:layout_height="fill_parent">
 
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/news_feed"
+            android:textColor="@color/colorAccent"
+            android:layout_marginBottom="5dp"
+            android:layout_marginStart="5dp"
+            android:layout_marginTop="5dp"
+            android:textSize="30sp"/>
+
         <ListView
-            android:id="@+id/counter_listview"
+            android:id="@+id/newsfeed_listview"
             android:layout_width="match_parent"
             android:layout_height="0dp"
             android:layout_weight="9"/>
