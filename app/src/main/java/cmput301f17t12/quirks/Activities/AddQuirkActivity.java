@@ -23,14 +23,20 @@ public class AddQuirkActivity extends AppCompatActivity {
         setContentView(R.layout.activity_add_quirk);
     }
 
+    // TODO:
+    // Save button clicked -> create and save new quirk and return to the previous activity
     private void saveButtonClicked(){
 
     }
 
+    // TODO:
+    // Cancel button clicked -> disregard selected options and return to the previous activity
     private void cancelButtonClicked(){
     }
 
+    // TODO:
+    // an occurence item was sl
     private void occurenceItemSelected(Day day){
     }
-    
+
 }
