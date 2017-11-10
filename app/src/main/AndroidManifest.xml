@@ -16,7 +16,8 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".Activities.EventsActivity"></activity>
+        <activity android:name=".Activities.EventsActivity" />
+        <activity android:name=".Activities.QuirksActivity"></activity>
     </application>
 
 </manifest>
