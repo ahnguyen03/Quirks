@@ -87,18 +87,15 @@ public class Event implements Mappable, Newsable {
         return false;
     }
 
-    // TODO: implement functions below
     @Override
     public String buildNewsHeader() {
-        return "Hello World!";
-
+        return getQuirk().getUser() + " logged an event!";
     }
 
     @Override
     public String buildDate() {
-        Date testDate = new Date(System.currentTimeMillis() - (4 * 60 * 60 * 1000));
         CharSequence relativeTimeSpan = DateUtils.getRelativeTimeSpanString(
-                testDate.getTime(),
+                getDate().getTime(),
                 System.currentTimeMillis(),
                 DateUtils.SECOND_IN_MILLIS,
                 DateUtils.FORMAT_ABBREV_RELATIVE);
@@ -107,6 +104,6 @@ public class Event implements Mappable, Newsable {
 
     @Override
     public String buildNewsDescription() {
-        return "This news description is a test";
+        return '"' + getComment() + '"';
     }
 }

@@ -1,30 +1,46 @@
 package cmput301f17t12.quirks.Models;
 
+import android.text.format.DateUtils;
+
 import java.util.ArrayList;
 import java.util.Date;
 
 import cmput301f17t12.quirks.Enumerations.Day;
+import cmput301f17t12.quirks.Interfaces.Newsable;
 
 /**
  * Created by thomas on 2017-10-21.
  */
 
-public class Quirk {
+public class Quirk implements Newsable {
     private EventList events;
+    private String user;
     private String title;
-    private  String type;
+    private String type;
     private String reason;
     private Date startDate;
     private ArrayList<Day> occDate;
-    private float currValue;
-    private float goalValue;
+    private int currValue;
+    private int goalValue;
 
-    // This is just for testing TODO: REMOVE THIS
-    public Quirk(){
+    // Parameter with only required values
+    public Quirk(String title, String type, Date startDate, ArrayList<Day> occDate, int goalValue) {
+        this.events = new EventList();
+        this.title = title;
+        this.type = type;
+        if (startDate == null) {
+            this.startDate = new Date();
+        } else {
+            this.startDate = startDate;
+        }
+        this.occDate = occDate;
+        this.goalValue = goalValue;
+        this.currValue = 0;
+
     }
 
     public Quirk(EventList events, String title, String type, String reason,
-                 Date startDate, ArrayList<Day> occDate, float currValue, float goalValue){
+                 Date startDate, ArrayList<Day> occDate, int currValue, int goalValue){
         this.events = events;
         this.title = title;
         this.type = type;
@@ -91,15 +107,15 @@ public class Quirk {
         this.occDate = occDate;
     }
 
-    public float getGoalValue(){
+    public int getGoalValue(){
         return goalValue;
     }
 
-    public void setGoalValue(float goalValue){
+    public void setGoalValue(int goalValue){
         this.goalValue = goalValue;
     }
 
-    public float getCurrValue(){
+    public int getCurrValue(){
         return currValue;
     }
 
@@ -111,6 +127,30 @@ public class Quirk {
         this.currValue = 0; // @TODO potentially change what this does
     }
 
+    public String getUser(){ return user; }
+
+    public void setUser(String user){
+        this.user = user;
+    }
 
 
+    @Override
+    public String buildNewsHeader() {
+        return getUser() + " added a new Quirk!";
+    }
+
+    @Override
+    public String buildDate() {
+        CharSequence relativeTimeSpan = DateUtils.getRelativeTimeSpanString(
+                getStartDate().getTime(),
+                System.currentTimeMillis(),
+                DateUtils.SECOND_IN_MILLIS,
+                DateUtils.FORMAT_ABBREV_RELATIVE);
+        return relativeTimeSpan.toString();
+    }
+
+    @Override
+    public String buildNewsDescription() {
+        return getTitle();
+    }
 }

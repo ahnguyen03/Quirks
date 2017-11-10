@@ -11,6 +11,7 @@ import java.util.ArrayList;
 import java.util.Date;
 
 import cmput301f17t12.quirks.Adapters.NewsItemAdapter;
+import cmput301f17t12.quirks.Enumerations.Day;
 import cmput301f17t12.quirks.Interfaces.Newsable;
 import cmput301f17t12.quirks.Models.Event;
 import cmput301f17t12.quirks.Models.Quirk;
@@ -29,9 +30,16 @@ public class MainActivity extends AppCompatActivity {
         // Should be current user's + friends', but that is for part 5.
 
         // Test
-        Quirk testQuirk = new Quirk();
-        Event testEvent = new Event(testQuirk, "This is an event", new Date());
+        ArrayList<Day> occurence = new ArrayList<Day>() {};
+        occurence.add(Day.SUNDAY);
+        Date thirtyminsago = new Date(System.currentTimeMillis() - 3600 * 500);
+        Quirk testQuirk = new Quirk("Eat a fruit every sunday", "Eating", thirtyminsago, occurence, 10);
+        testQuirk.setUser("zafra");
+        Event testEvent = new Event(testQuirk, "This is an event haha nice dude", new Date());
+
+        newsitems.add(testQuirk);
         newsitems.add(testEvent);
+
 
         // instantiate custom adapter
         adapter = new NewsItemAdapter(newsitems, this);
