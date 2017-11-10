@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_height="match_parent"
+    android:layout_width="match_parent">
+    <item
+        android:id="@+id/action_geomap"
+        android:enabled="true"
+        android:icon="@drawable/ic_geomap"
+        android:title="@string/geomap_desc"
+        app:showAsAction="ifRoom" />
+    <item
+        android:id="@+id/action_social"
+        android:enabled="true"
+        android:icon="@drawable/ic_social"
+        android:title="@string/social_image_desc"
+        app:showAsAction="ifRoom" />
+    <item
+        android:id="@+id/action_newquirk"
+        android:enabled="true"
+        android:icon="@drawable/ic_add_box"
+        android:title="@string/event_image_desc"
+        app:showAsAction="ifRoom" />
+    <item
+        android:id="@+id/action_quirklist"
+        android:enabled="true"
+        android:icon="@drawable/ic_viewlist"
+        android:title="@string/quirklist_image_desc"
+        app:showAsAction="ifRoom" />
+    <item
+        android:id="@+id/action_home"
+        android:enabled="true"
+        android:icon="@drawable/ic_home"
+        android:title="@string/home_image_desc"
+        app:showAsAction="ifRoom" />
+</menu>

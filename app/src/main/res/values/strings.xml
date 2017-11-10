@@ -1,9 +1,9 @@
 <resources>
     <string name="app_name">Quirks</string>
-    <string name="geomap_desc">Geolocation Map Image</string>
-    <string name="social_image_desc">Social Image</string>
-    <string name="event_image_desc">New Event Image</string>
-    <string name="quirklist_image_desc">Quirk List Image</string>
-    <string name="home_image_desc">Home Image</string>
+    <string name="geomap_desc">Map</string>
+    <string name="social_image_desc">Social</string>
+    <string name="event_image_desc">New Event</string>
+    <string name="quirklist_image_desc">Quirks</string>
+    <string name="home_image_desc">Home</string>
     <string name="news_feed">News Feed</string>
 </resources>

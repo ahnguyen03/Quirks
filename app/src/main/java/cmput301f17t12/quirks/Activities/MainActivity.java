@@ -1,8 +1,11 @@
 package cmput301f17t12.quirks.Activities;
 
 import android.content.Intent;
+import android.support.annotation.NonNull;
+import android.support.design.widget.BottomNavigationView;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ListView;
@@ -11,6 +14,7 @@ import java.util.ArrayList;
 import java.util.Date;
 
 import cmput301f17t12.quirks.Adapters.NewsItemAdapter;
+import cmput301f17t12.quirks.Helpers.BottomNavigationViewHelper;
 import cmput301f17t12.quirks.Enumerations.Day;
 import cmput301f17t12.quirks.Interfaces.Newsable;
 import cmput301f17t12.quirks.Models.Event;
@@ -25,6 +29,36 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        BottomNavigationView bottomNavigationView = (BottomNavigationView)
+                findViewById(R.id.bottom_navigation);
+
+        bottomNavigationView.setOnNavigationItemSelectedListener(
+                new BottomNavigationView.OnNavigationItemSelectedListener() {
+                    @Override
+                    public boolean onNavigationItemSelected(@NonNull MenuItem item) {
+                        switch (item.getItemId()) {
+                            case R.id.action_geomap:
+                                // TODO:Part 5
+                                break;
+                            case R.id.action_social:
+                                // TODO: Part 5
+                                break;
+                            case R.id.action_newquirk:
+                                // TODO
+                                break;
+                            case R.id.action_quirklist:
+                                // TODO
+                                break;
+                            case R.id.action_home:
+                                // TODO
+                                break;
+                        }
+                        return false;
+                    }
+                });
+
+        BottomNavigationViewHelper.removeShiftMode(bottomNavigationView);
 
         // TODO: Get current user's newsable items.
         // Should be current user's + friends', but that is for part 5.
