@@ -91,6 +91,7 @@ public class Event implements Mappable, Newsable {
     @Override
     public String buildNewsHeader() {
         return "Hello World!";
+
     }
 
     @Override

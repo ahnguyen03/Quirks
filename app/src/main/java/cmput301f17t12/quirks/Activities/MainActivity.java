@@ -25,6 +25,9 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        // TODO: Get current user's newsable items.
+        // Should be current user's + friends', but that is for part 5.
+
         // Test
         Quirk testQuirk = new Quirk();
         Event testEvent = new Event(testQuirk, "This is an event", new Date());
@@ -36,16 +39,5 @@ public class MainActivity extends AppCompatActivity {
         // handle listview and assign adapter
         ListView lView = (ListView) findViewById(R.id.newsfeed_listview);
         lView.setAdapter(adapter);
-
-        lView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
-            @Override
-            public void onItemClick(AdapterView<?> adapter, View view, int position, long arg) {
-//                Intent intent = new Intent(MainActivity.this, EditCounterActivity.class);
-//                Counter selectedCounter = (Counter)adapter.getItemAtPosition(position);
-//                intent.putExtra("EDIT_COUNTER", selectedCounter);
-//                intent.putExtra("COUNTER_LIST", counters);
-//                startActivityForResult(intent, EDIT_COUNTER_ACTIVITY_REQUEST_CODE);
-            }
-        });
     }
 }
