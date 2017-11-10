@@ -19,6 +19,10 @@ public class Quirk {
     private float currValue;
     private float goalValue;
 
+    // This is just for testing TODO: REMOVE THIS
+    public Quirk(){
+    }
+
     public Quirk(EventList events, String title, String type, String reason,
                  Date startDate, ArrayList<Day> occDate, float currValue, float goalValue){
         this.events = events;

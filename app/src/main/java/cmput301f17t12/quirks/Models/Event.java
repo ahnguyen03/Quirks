@@ -1,22 +1,31 @@
 package cmput301f17t12.quirks.Models;
 
 import android.net.Uri;
+import android.text.format.DateUtils;
 
 import java.util.Date;
 
 import cmput301f17t12.quirks.Interfaces.Mappable;
+import cmput301f17t12.quirks.Interfaces.Newsable;
 
 /**
  * Created by thomas on 2017-10-21.
  */
 
-public class Event implements Mappable {
+public class Event implements Mappable, Newsable {
 
     private Quirk quirk;
     private String comment;
     private Uri photoUri;
     private Date date;
     private Geolocation geolocation;
+
+    // Event without URI and geolocation
+    public Event(Quirk quirk, String comment, Date date){
+        this.quirk = quirk;
+        this.comment = comment;
+        this.date = date;
+    }
 
     public Event(Quirk quirk, String comment, Uri photoUri, Date date, Geolocation geolocation){
         this.quirk = quirk;
@@ -78,4 +87,25 @@ public class Event implements Mappable {
         return false;
     }
 
+    // TODO: implement functions below
+    @Override
+    public String buildNewsHeader() {
+        return "Hello World!";
+    }
+
+    @Override
+    public String buildDate() {
+        Date testDate = new Date(System.currentTimeMillis() - (4 * 60 * 60 * 1000));
+        CharSequence relativeTimeSpan = DateUtils.getRelativeTimeSpanString(
+                testDate.getTime(),
+                System.currentTimeMillis(),
+                DateUtils.SECOND_IN_MILLIS,
+                DateUtils.FORMAT_ABBREV_RELATIVE);
+        return relativeTimeSpan.toString();
+    }
+
+    @Override
+    public String buildNewsDescription() {
+        return "This news description is a test";
+    }
 }
