@@ -11,8 +11,6 @@
         android:layout_marginStart="10dp"
         android:layout_marginEnd="10dp">
 
-        <!--TODO: dynamically change text and images for each item-->
-
         <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
@@ -22,7 +20,6 @@
                 android:layout_height="wrap_content"
                 android:layout_alignParentStart="true"
                 android:layout_centerVertical="true"
-                android:text="zafra logged a new event!"
                 android:textSize="16sp" />
             <TextView
                 android:id="@+id/timeTxt"
@@ -30,7 +27,6 @@
                 android:layout_height="wrap_content"
                 android:layout_alignParentTop="true"
                 android:layout_alignParentEnd="true"
-                android:text="10 mins ago"
                 android:textSize="12sp" />
         </RelativeLayout>
 
@@ -44,17 +40,17 @@
                 android:layout_marginTop="10dp"
                 android:layout_alignParentStart="true"
                 android:layout_centerVertical="true"
-                android:text="zafra logged &quot;workout&quot; for 5 days in a row!"
                 android:textSize="12sp" />
 
             <ImageView
+                android:id="@+id/newsSymbol"
                 android:layout_width="50dp"
                 android:layout_height="50dp"
                 android:layout_alignParentTop="true"
                 android:layout_alignParentEnd="true"
-                android:scaleType="fitXY"
-                android:src="@drawable/ic_starnews"/>
+                android:scaleType="fitXY" />
         </RelativeLayout>
+
 
     </LinearLayout>
 </LinearLayout>
