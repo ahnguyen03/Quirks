@@ -17,7 +17,10 @@
             </intent-filter>
         </activity>
         <activity android:name=".Activities.EventsActivity" />
-        <activity android:name=".Activities.QuirksActivity"></activity>
+        <activity android:name=".Activities.QuirksActivity" />
+        <activity android:name=".Activities.LoginActivity" />
+        <activity android:name=".Activities.EditQuirkClickedActivity" />
+        <activity android:name=".Activities.AddQuirkActivity"></activity>
     </application>
 
 </manifest>
