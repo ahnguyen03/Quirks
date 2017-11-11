@@ -4,6 +4,131 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/background"
     tools:context="cmput301f17t12.quirks.Activities.AddQuirkActivity">
+
+    <RelativeLayout
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        tools:layout_editor_absoluteX="2dp"
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_marginTop="2dp">
+
+
+        <TextView
+            android:id="@+id/textViewSelDate"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_above="@+id/textViewReason"
+            android:layout_alignStart="@+id/textViewStartDate"
+            android:layout_marginBottom="10dp"
+            android:background="@color/backgroundlight"
+            android:hint="Select a Starting Date"
+            android:textSize="25sp" />
+
+        <TextView
+            android:id="@+id/textViewOccurence"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignStart="@+id/editTextReason"
+            android:layout_below="@+id/editTextReason"
+            android:layout_marginTop="13dp"
+            android:text="Occurence"
+            android:textSize="25sp" />
+
+        <EditText
+            android:id="@+id/editTextReason"
+            android:layout_width="350dp"
+            android:layout_height="55dp"
+            android:layout_alignStart="@+id/textViewReason"
+            android:layout_below="@+id/textViewReason"
+            android:layout_marginTop="14dp"
+            android:background="@color/backgroundlight"
+            android:ems="10"
+            android:hint="Reason"
+            android:inputType="textPersonName" />
+
+        <TextView
+            android:id="@+id/textViewReason"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Reason"
+            android:textSize="25sp"
+            android:layout_centerVertical="true"
+            android:layout_alignStart="@+id/textViewSelDate" />
+
+        <EditText
+            android:id="@+id/editTitle"
+            android:layout_width="350dp"
+            android:layout_height="25dp"
+            android:background="@color/backgroundlight"
+            android:ems="10"
+            android:hint="Title"
+            android:inputType="textPersonName"
+            android:layout_below="@+id/textViewTitle"
+            android:layout_alignStart="@+id/textViewTitle" />
+
+        <Button
+            android:id="@+id/Cancelbut"
+            android:layout_width="170dp"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentEnd="true"
+            android:onClick="cancelButtonClicked"
+            android:text="Cancel" />
+
+        <Button
+            android:id="@+id/SaveBut"
+            android:layout_width="170dp"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentStart="true"
+            android:onClick="saveButtonClicked"
+            android:text="Save" />
+
+        <TextView
+            android:id="@+id/textViewType"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentTop="true"
+            android:layout_marginStart="15dp"
+            android:layout_marginTop="14dp"
+            android:text="Type"
+            android:textSize="25sp" />
+
+        <TextView
+            android:id="@+id/textViewTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignStart="@+id/editTextType"
+            android:layout_below="@+id/editTextType"
+            android:layout_marginTop="17dp"
+            android:text="Title"
+            android:textSize="25sp" />
+
+        <TextView
+            android:id="@+id/textViewStartDate"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignStart="@+id/editTitle"
+            android:layout_below="@+id/editTitle"
+            android:layout_marginTop="14dp"
+            android:text="Starting Date"
+            android:textSize="25sp" />
+
+        <EditText
+            android:id="@+id/editTextType"
+            android:layout_width="350dp"
+            android:layout_height="25dp"
+            android:layout_alignStart="@+id/textViewType"
+            android:layout_below="@+id/textViewType"
+            android:background="@color/backgroundlight"
+            android:ems="10"
+            android:hint="Type"
+            android:inputType="textPersonName" />
+
+
+    </RelativeLayout>
 
 </android.support.constraint.ConstraintLayout>
