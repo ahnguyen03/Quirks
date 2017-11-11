@@ -72,10 +72,5 @@ public class NewsItemAdapter extends BaseAdapter implements ListAdapter {
         return view;
     }
 
-    @Override
-    public void notifyDataSetChanged() {
-//        ((MainActivity) context).updateSummary();
-        super.notifyDataSetChanged();
-    }
 }
 
