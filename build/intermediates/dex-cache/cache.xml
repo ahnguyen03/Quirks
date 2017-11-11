@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<items version="2" >
+
+    <item
+        is-multidex="true"
+        jar="/home/ahnguyen/Desktop/cmput_301_project_3/Quirks/app/build/intermediates/incremental-runtime-classes/debug/instant-run.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="26.0.1"
+        sha1="3be78ebc2706b2e1fe2f12d5726887a92d6c183b">
+        <dex dex="/home/ahnguyen/Desktop/cmput_301_project_3/Quirks/app/build/intermediates/transforms/dex/debug/folders/1000/10000/instant-run_ae710785599a1f4bd9067e4db5a7addf176547eb/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/home/ahnguyen/Desktop/cmput_301_project_3/Quirks/app/build/intermediates/incremental-classes/debug/instant-run-bootstrap.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="26.0.1"
+        sha1="ed1edc32cbf31ac593b642cf7bc7d5813f480663">
+        <dex dex="/home/ahnguyen/Desktop/cmput_301_project_3/Quirks/app/build/intermediates/transforms/dex/debug/folders/1000/10000/instant-run-bootstrap_b1630902c4c63d4f41f3932b3a1ef41d8579d891/classes.dex" />
+    </item>
+
+</items>
