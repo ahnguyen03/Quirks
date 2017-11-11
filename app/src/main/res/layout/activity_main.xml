@@ -41,5 +41,14 @@
             app:itemTextColor="@color/white"
             app:menu="@menu/navigation" />
 
+        <Button
+            android:id="@+id/CreateQurik"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Quirk Create"
+            android:layout_alignTop="@+id/hometitle"
+            android:layout_alignParentEnd="true"
+            android:layout_marginEnd="42dp" />
+
     </RelativeLayout>
 </android.support.constraint.ConstraintLayout>

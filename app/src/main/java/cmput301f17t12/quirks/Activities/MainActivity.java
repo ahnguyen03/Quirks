@@ -9,6 +9,7 @@ import android.util.Log;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.AdapterView;
+import android.widget.Button;
 import android.widget.ListView;
 
 import java.util.ArrayList;
@@ -41,6 +42,20 @@ public class MainActivity extends BaseActivity {
         Quirk testQuirk = new Quirk("Eat a fruit every sunday", "Eating", thirtyminsago, occurence, 10);
         testQuirk.setUser("zafra");
         Event testEvent = new Event(testQuirk, "This is an event haha nice dude", new Date());
+
+
+        Button Quirk_create = (Button)findViewById(R.id.CreateQurik);
+        Quirk_create.setOnClickListener(new View.OnClickListener() {
+
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(MainActivity.this, AddQuirkActivity.class);
+                intent.putExtra("Creating",1);
+                startActivityForResult(intent,1);
+
+            }
+        });
+
 
         newsitems.add(testQuirk);
         newsitems.add(testEvent);
