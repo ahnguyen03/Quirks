@@ -27,6 +27,7 @@ public class AddQuirkActivity extends AppCompatActivity {
     private static final String TAG = "AddQuirkActivity" ;
     private String type;
     private String title;
+    private String goal;
     public static String date2;
     private Date startingDate;
     private String reason;
@@ -81,19 +82,21 @@ public class AddQuirkActivity extends AppCompatActivity {
         type = ((EditText)findViewById(R.id.editTextType)).getText().toString();
         title = ((EditText)findViewById(R.id.editTitle)).getText().toString();
         reason = ((EditText)findViewById(R.id.editTextReason)).getText().toString();
-        if(type.equals("")||(title.equals(""))){
+        goal = ((EditText)findViewById(R.id.editTextGoal)).getText().toString();
+        if(type.equals("")||(title.equals(""))||(goal.equals(""))){
 
         }
 
         else {
             Log.d(TAG, "saveButtonClicked: the type is " + type + " the title is " + title + " the reason is " + reason);
             Log.d(TAG, "saveButtonClicked: the date after clicking save is  " + date2);
-
+            Log.d(TAG, "saveButtonClicked: the goal value is " + goal);
             Intent intent = new Intent();
             intent.putExtra("Quirk_Type", type);
             intent.putExtra("Quirk_Title", title);
             intent.putExtra("Quirk_Reason", reason);
             intent.putExtra("Quirk_Date",date2);
+            intent.putExtra("Quirk_Goal",goal);
             setResult(1, intent);
             finish();
         }
