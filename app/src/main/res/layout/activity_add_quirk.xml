@@ -10,52 +10,62 @@
     <RelativeLayout
         android:layout_width="fill_parent"
         android:layout_height="fill_parent"
-        tools:layout_editor_absoluteX="2dp"
+        tools:layout_editor_absoluteX="0dp"
         app:layout_constraintTop_toTopOf="parent"
-        android:layout_marginTop="2dp">
+        android:layout_marginTop="4dp">
 
+
+        <TextView
+            android:id="@+id/textViewGoal"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Goal"
+            android:textSize="15sp"
+            android:layout_below="@+id/textViewSelDate"
+            android:layout_alignStart="@+id/textViewSelDate"
+            android:layout_marginTop="12dp" />
 
         <TextView
             android:id="@+id/textViewSelDate"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_above="@+id/textViewReason"
-            android:layout_alignStart="@+id/textViewStartDate"
-            android:layout_marginBottom="10dp"
             android:background="@color/backgroundlight"
             android:hint="Select a Starting Date"
-            android:textSize="25sp" />
+            android:textSize="15sp"
+            android:layout_below="@+id/textViewStartDate"
+            android:layout_alignStart="@+id/textViewStartDate"
+            android:layout_marginTop="11dp" />
 
         <TextView
             android:id="@+id/textViewOccurence"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_alignStart="@+id/editTextReason"
-            android:layout_below="@+id/editTextReason"
-            android:layout_marginTop="13dp"
             android:text="Occurence"
-            android:textSize="25sp" />
+            android:textSize="15sp"
+            android:layout_below="@+id/editTextReason"
+            android:layout_alignStart="@+id/editTextReason"
+            android:layout_marginTop="11dp" />
 
         <EditText
             android:id="@+id/editTextReason"
             android:layout_width="350dp"
             android:layout_height="55dp"
-            android:layout_alignStart="@+id/textViewReason"
-            android:layout_below="@+id/textViewReason"
-            android:layout_marginTop="14dp"
             android:background="@color/backgroundlight"
             android:ems="10"
             android:hint="Reason"
-            android:inputType="textPersonName" />
+            android:inputType="textPersonName"
+            android:layout_below="@+id/textViewReason"
+            android:layout_alignStart="@+id/textViewReason" />
 
         <TextView
             android:id="@+id/textViewReason"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Reason"
-            android:textSize="25sp"
-            android:layout_centerVertical="true"
-            android:layout_alignStart="@+id/textViewSelDate" />
+            android:textSize="15sp"
+            android:layout_below="@+id/editTextGoal"
+            android:layout_alignStart="@+id/editTextGoal"
+            android:layout_marginTop="12dp" />
 
         <EditText
             android:id="@+id/editTitle"
@@ -95,7 +105,7 @@
             android:layout_marginStart="15dp"
             android:layout_marginTop="14dp"
             android:text="Type"
-            android:textSize="25sp" />
+            android:textSize="15sp" />
 
         <TextView
             android:id="@+id/textViewTitle"
@@ -105,7 +115,7 @@
             android:layout_below="@+id/editTextType"
             android:layout_marginTop="17dp"
             android:text="Title"
-            android:textSize="25sp" />
+            android:textSize="15sp" />
 
         <TextView
             android:id="@+id/textViewStartDate"
@@ -115,7 +125,7 @@
             android:layout_below="@+id/editTitle"
             android:layout_marginTop="14dp"
             android:text="Starting Date"
-            android:textSize="25sp" />
+            android:textSize="15sp" />
 
         <EditText
             android:id="@+id/editTextType"
@@ -127,6 +137,25 @@
             android:ems="10"
             android:hint="Type"
             android:inputType="textPersonName" />
+
+        <Button
+            android:id="@+id/button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Button"
+            android:layout_marginTop="12dp"
+            android:layout_below="@+id/textViewOccurence"
+            android:layout_alignStart="@+id/textViewOccurence" />
+
+        <EditText
+            android:id="@+id/editTextGoal"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignStart="@+id/textViewGoal"
+            android:layout_below="@+id/textViewGoal"
+            android:ems="10"
+            android:hint="Input a goal value"
+            android:inputType="number" />
 
 
     </RelativeLayout>
