@@ -6,14 +6,23 @@ import java.util.Date;
 import cmput301f17t12.quirks.*;
 import cmput301f17t12.quirks.Models.*;
 
-public class QuirksActivity extends AppCompatActivity {
+public class QuirksActivity extends BaseActivity {
     private QuirkList quirkList;
     private Date dateFilter;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_quirks);
+    }
+
+    @Override
+    int getContentViewId() {
+        return R.layout.activity_quirks;
+    }
+
+    @Override
+    int getNavigationMenuItemId() {
+        return R.id.action_quirklist;
     }
 
     // TODO:

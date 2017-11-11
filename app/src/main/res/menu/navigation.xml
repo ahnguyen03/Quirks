@@ -16,7 +16,7 @@
         android:title="@string/social_image_desc"
         app:showAsAction="ifRoom" />
     <item
-        android:id="@+id/action_newquirk"
+        android:id="@+id/action_newevent"
         android:enabled="true"
         android:icon="@drawable/ic_add_box"
         android:title="@string/event_image_desc"

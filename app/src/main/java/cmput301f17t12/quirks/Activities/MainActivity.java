@@ -5,6 +5,7 @@ import android.support.annotation.NonNull;
 import android.support.design.widget.BottomNavigationView;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.AdapterView;
@@ -21,44 +22,14 @@ import cmput301f17t12.quirks.Models.Event;
 import cmput301f17t12.quirks.Models.Quirk;
 import cmput301f17t12.quirks.R;
 
-public class MainActivity extends AppCompatActivity {
+public class MainActivity extends BaseActivity {
     private ArrayList<Newsable> newsitems = new ArrayList<>();
     private NewsItemAdapter adapter;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
-
-        BottomNavigationView bottomNavigationView = (BottomNavigationView)
-                findViewById(R.id.bottom_navigation);
-
-        bottomNavigationView.setOnNavigationItemSelectedListener(
-                new BottomNavigationView.OnNavigationItemSelectedListener() {
-                    @Override
-                    public boolean onNavigationItemSelected(@NonNull MenuItem item) {
-                        switch (item.getItemId()) {
-                            case R.id.action_geomap:
-                                // TODO:Part 5
-                                break;
-                            case R.id.action_social:
-                                // TODO: Part 5
-                                break;
-                            case R.id.action_newquirk:
-                                // TODO
-                                break;
-                            case R.id.action_quirklist:
-                                // TODO
-                                break;
-                            case R.id.action_home:
-                                // TODO
-                                break;
-                        }
-                        return false;
-                    }
-                });
-
-        BottomNavigationViewHelper.removeShiftMode(bottomNavigationView);
+//        setContentView(R.layout.activity_main);
 
         // TODO: Get current user's newsable items.
         // Should be current user's + friends', but that is for part 5.
@@ -81,5 +52,15 @@ public class MainActivity extends AppCompatActivity {
         // handle listview and assign adapter
         ListView lView = (ListView) findViewById(R.id.newsfeed_listview);
         lView.setAdapter(adapter);
+    }
+
+    @Override
+    int getContentViewId() {
+        return R.layout.activity_main;
+    }
+
+    @Override
+    int getNavigationMenuItemId() {
+        return R.id.action_home;
     }
 }
