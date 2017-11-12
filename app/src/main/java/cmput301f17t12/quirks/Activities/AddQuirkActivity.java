@@ -11,8 +11,10 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.DatePicker;
 import android.widget.EditText;
+import android.widget.RadioButton;
 import android.widget.TextView;
 
+import java.io.Serializable;
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
@@ -20,6 +22,7 @@ import java.util.Calendar;
 import java.util.Date;
 
 import cmput301f17t12.quirks.Enumerations.Day;
+import cmput301f17t12.quirks.Models.Quirk;
 import cmput301f17t12.quirks.R;
 
 public class AddQuirkActivity extends AppCompatActivity {
@@ -34,6 +37,13 @@ public class AddQuirkActivity extends AppCompatActivity {
     private ArrayList<Day> occurence;
     private TextView SelectDate;
     private DatePickerDialog.OnDateSetListener SelectDateListener;
+    public RadioButton radButMon;
+    public RadioButton radButTue;
+    public RadioButton radButWed;
+    public RadioButton radButThur;
+    public RadioButton radButFri;
+    public RadioButton radButSat;
+    public RadioButton radButSun;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -41,11 +51,15 @@ public class AddQuirkActivity extends AppCompatActivity {
         setContentView(R.layout.activity_add_quirk);
         Button Save_but = (Button)findViewById(R.id.SaveBut);
         Button Cancel_but = (Button)findViewById(R.id.Cancelbut);
-
+        radButMon = (RadioButton)findViewById(R.id.radioButMonday);
+        radButTue = (RadioButton)findViewById(R.id.radioButTuesday);
+        radButWed = (RadioButton)findViewById(R.id.radioButWednesday);
+        radButThur = (RadioButton)findViewById(R.id.radioButThursday);
+        radButFri = (RadioButton)findViewById(R.id.radioButFriday);
+        radButSat = (RadioButton)findViewById(R.id.radioButSaturday);
+        radButSun = (RadioButton)findViewById(R.id.radioButSunday);
         SelectDate = (TextView)findViewById(R.id.textViewSelDate);
-
         //Need the date
-        //Need the occurence
 
         SelectDate.setOnClickListener(new View.OnClickListener() {
 
@@ -83,20 +97,20 @@ public class AddQuirkActivity extends AppCompatActivity {
         title = ((EditText)findViewById(R.id.editTitle)).getText().toString();
         reason = ((EditText)findViewById(R.id.editTextReason)).getText().toString();
         goal = ((EditText)findViewById(R.id.editTextGoal)).getText().toString();
+        ArrayList<Day> Quirk_occurence = new ArrayList<Day>();
+
         if(type.equals("")||(title.equals(""))||(goal.equals(""))){
 
         }
 
         else {
-            Log.d(TAG, "saveButtonClicked: the type is " + type + " the title is " + title + " the reason is " + reason);
-            Log.d(TAG, "saveButtonClicked: the date after clicking save is  " + date2);
-            Log.d(TAG, "saveButtonClicked: the goal value is " + goal);
+
+            Quirk_occurence = occurenceItemSelected();
             Intent intent = new Intent();
-            intent.putExtra("Quirk_Type", type);
-            intent.putExtra("Quirk_Title", title);
-            intent.putExtra("Quirk_Reason", reason);
-            intent.putExtra("Quirk_Date",date2);
-            intent.putExtra("Quirk_Goal",goal);
+            Date Date_to_test = new Date();
+            int Quirk_goal = Integer.parseInt(goal);
+            Quirk Quirk_created = new Quirk(title,type,Date_to_test,Quirk_occurence,Quirk_goal);
+            intent.putExtra("Quirk_Created", Quirk_created);
             setResult(1, intent);
             finish();
         }
@@ -114,7 +128,30 @@ public class AddQuirkActivity extends AppCompatActivity {
 
     // TODO:
     // an occurence item was sl
-    private void occurenceItemSelected(Day day){
+    private ArrayList<Day> occurenceItemSelected(){
+        ArrayList<Day> Day = new ArrayList<Day>();
+        if(radButMon.isChecked()){
+            Day.add(cmput301f17t12.quirks.Enumerations.Day.MONDAY);
+        }
+        if(radButTue.isChecked()){
+            Day.add(cmput301f17t12.quirks.Enumerations.Day.TUESDAY);
+        }
+        if(radButWed.isChecked()){
+            Day.add(cmput301f17t12.quirks.Enumerations.Day.WEDNESDAY);
+        }
+        if(radButThur.isChecked()){
+            Day.add(cmput301f17t12.quirks.Enumerations.Day.THURSDAY);
+        }
+        if(radButFri.isChecked()){
+            Day.add(cmput301f17t12.quirks.Enumerations.Day.FRIDAY);
+        }
+        if(radButSat.isChecked()){
+            Day.add(cmput301f17t12.quirks.Enumerations.Day.SATURDAY);
+        }
+        if(radButSun.isChecked()){
+            Day.add(cmput301f17t12.quirks.Enumerations.Day.SUNDAY);
+        }
+     return Day;
     }
 
 }
