@@ -97,7 +97,7 @@ public class AddQuirkActivity extends AppCompatActivity {
         title = ((EditText)findViewById(R.id.editTitle)).getText().toString();
         reason = ((EditText)findViewById(R.id.editTextReason)).getText().toString();
         goal = ((EditText)findViewById(R.id.editTextGoal)).getText().toString();
-        ArrayList<Day> Quirk_occurence = new ArrayList<Day>();
+        ArrayList<Day> QuirkOccurence = new ArrayList<Day>();
 
         if(type.equals("")||(title.equals(""))||(goal.equals(""))){
 
@@ -105,13 +105,18 @@ public class AddQuirkActivity extends AppCompatActivity {
 
         else {
 
-            Quirk_occurence = occurenceItemSelected();
-            Intent intent = new Intent();
-            Date Date_to_test = new Date();
+            QuirkOccurence = occurenceItemSelected();
+            //Intent intent = new Intent();
+            Date DatetoTest = new Date();
             int Quirk_goal = Integer.parseInt(goal);
-            Quirk Quirk_created = new Quirk(title,type,Date_to_test,Quirk_occurence,Quirk_goal);
-            intent.putExtra("Quirk_Created", Quirk_created);
-            setResult(1, intent);
+            Quirk QuirkCreated = new Quirk(title,type,DatetoTest,QuirkOccurence,Quirk_goal);
+            Log.d(TAG, "saveButtonClicked: The QuirkCreated is the title is  " + QuirkCreated.getTitle() );
+            Log.d(TAG, "saveButtonClicked: The QuirkCreated is the type is  " + QuirkCreated.getType() );
+            Log.d(TAG, "saveButtonClicked: The QuirkCreated is the Date is  " + QuirkCreated.getStartDate() );
+            Log.d(TAG, "saveButtonClicked: The QuirkCreated is the Occurence Date is  " + QuirkCreated.getOccDate());
+            Log.d(TAG, "saveButtonClicked: The QuirkCreated is the Goal is  " + QuirkCreated.getGoalValue());
+          //  intent.putExtra("Quirk_Created", Quirk_created);
+            //setResult(1, intent);
             finish();
         }
 

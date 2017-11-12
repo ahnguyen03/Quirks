@@ -78,4 +78,15 @@ public class MainActivity extends BaseActivity {
     int getNavigationMenuItemId() {
         return R.id.action_home;
     }
+
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+
+        if(requestCode == 1 && resultCode == 1 && data != null){
+            Quirk incoming_Quirk = (Quirk) data.getSerializableExtra("Quirk_Created");
+            newsitems.add(incoming_Quirk);
+            adapter.notifyDataSetChanged();
+        }
+    }
 }

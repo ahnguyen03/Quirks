@@ -4,7 +4,7 @@ import android.text.format.DateUtils;
 
 import java.util.ArrayList;
 import java.util.Date;
-import java.io.Serializable;
+
 import cmput301f17t12.quirks.Enumerations.Day;
 import cmput301f17t12.quirks.Interfaces.Newsable;
 
@@ -12,7 +12,7 @@ import cmput301f17t12.quirks.Interfaces.Newsable;
  * Created by thomas on 2017-10-21.
  */
 
-public class Quirk implements Serializable,Newsable{
+public class Quirk implements Newsable {
     private EventList events;
     private String user;
     private String title;
